@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="theme-color"
+    content="#071B49"
+  />
+
+  <meta
+    name="description"
+    content="Zenova Note Studio - Professional educational note authoring system"
+  />
+
+  <title>Zenova Note Studio</title>
+
+  <!--
+    ============================================================
+    ZENOVA NOTE STUDIO
+    Main HTML entry point
+    ============================================================
+
+    All actual application functionality will be added through:
+
+    src/main.jsx
+
+    For V1 we are keeping the HTML clean and letting React
+    control the application.
+  -->
+
+
+  <!--
+    ============================================================
+    FONT PRELOADS
+    ============================================================
+
+    We will later place Zenova's official font files inside:
+
+    public/fonts/
+
+    These preload lines are intentionally prepared now.
+  -->
+
+  <link
+    rel="preload"
+    href="/fonts/Poppins-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+  <link
+    rel="preload"
+    href="/fonts/Poppins-SemiBold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+  <link
+    rel="preload"
+    href="/fonts/Poppins-Bold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+  <link
+    rel="preload"
+    href="/fonts/Inter-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+  <link
+    rel="preload"
+    href="/fonts/Inter-Medium.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+  <link
+    rel="preload"
+    href="/fonts/Inter-SemiBold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+  <link
+    rel="preload"
+    href="/fonts/Inter-Bold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+  <link
+    rel="preload"
+    href="/fonts/STIXTwoMath-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+
+  <!--
+    ============================================================
+    FAVICON
+    ============================================================
+
+    We will add the actual Zenova favicon later.
+  -->
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/logo/zenova-logo.svg"
+  />
+
+</head>
+
+
+<body>
+
+  <!--
+    ============================================================
+    REACT APPLICATION ROOT
+    ============================================================
+
+    React will mount the complete Zenova Note Studio application
+    inside this element.
+  -->
+
+  <div id="root"></div>
+
+
+  <!--
+    ============================================================
+    APPLICATION ENTRY
+    ============================================================
+
+    Vite will load src/main.jsx.
+
+    main.jsx will load:
+      App.jsx
+      styles.css
+      all editor components
+  -->
+
+  <script
+    type="module"
+    src="/src/main.jsx"
+  ></script>
+
+</body>
+
+</html>
