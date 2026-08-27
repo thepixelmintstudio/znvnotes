@@ -1,0 +1,24 @@
+{
+  "name": "zenova-note-studio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+
+  "dependencies": {
+    "firebase": "^12.1.0",
+    "katex": "^0.16.22",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.2",
+    "vite": "^7.1.2"
+  }
+}
