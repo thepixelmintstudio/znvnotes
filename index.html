@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+  <!-- ======================================================
+       ZENOVA NOTE STUDIO
+       Main HTML Entry
+       ====================================================== -->
+
   <meta charset="UTF-8" />
 
   <meta
@@ -15,146 +22,44 @@
 
   <meta
     name="description"
-    content="Zenova Note Studio - Professional educational note authoring system"
+    content="ZENOVA NOTE STUDIO - Professional academic note authoring software"
   />
 
-  <title>Zenova Note Studio</title>
-
-  <!--
-    ============================================================
-    ZENOVA NOTE STUDIO
-    Main HTML entry point
-    ============================================================
-
-    All actual application functionality will be added through:
-
-    src/main.jsx
-
-    For V1 we are keeping the HTML clean and letting React
-    control the application.
-  -->
+  <title>ZENOVA NOTE STUDIO</title>
 
 
-  <!--
-    ============================================================
-    FONT PRELOADS
-    ============================================================
+  <!-- ======================================================
+       FONTS
 
-    We will later place Zenova's official font files inside:
+       We will later store Zenova's actual font files inside:
 
-    public/fonts/
+       public/fonts/
 
-    These preload lines are intentionally prepared now.
-  -->
-
-  <link
-    rel="preload"
-    href="/fonts/Poppins-Regular.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-  />
-
-  <link
-    rel="preload"
-    href="/fonts/Poppins-SemiBold.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-  />
-
-  <link
-    rel="preload"
-    href="/fonts/Poppins-Bold.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-  />
-
-  <link
-    rel="preload"
-    href="/fonts/Inter-Regular.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-  />
-
-  <link
-    rel="preload"
-    href="/fonts/Inter-Medium.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-  />
-
-  <link
-    rel="preload"
-    href="/fonts/Inter-SemiBold.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-  />
-
-  <link
-    rel="preload"
-    href="/fonts/Inter-Bold.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-  />
-
-  <link
-    rel="preload"
-    href="/fonts/STIXTwoMath-Regular.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-  />
+       We are preparing the application for local fonts
+       from the beginning instead of depending on a user's
+       computer having the fonts installed.
+       ====================================================== -->
 
 
-  <!--
-    ============================================================
-    FAVICON
-    ============================================================
+  <!-- ======================================================
+       APPLICATION ROOT
 
-    We will add the actual Zenova favicon later.
-  -->
-
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="/logo/zenova-logo.svg"
-  />
+       React will load the complete software here.
+       ====================================================== -->
 
 </head>
 
 
 <body>
 
-  <!--
-    ============================================================
-    REACT APPLICATION ROOT
-    ============================================================
-
-    React will mount the complete Zenova Note Studio application
-    inside this element.
-  -->
-
   <div id="root"></div>
 
 
-  <!--
-    ============================================================
-    APPLICATION ENTRY
-    ============================================================
+  <!-- ======================================================
+       APPLICATION ENTRY POINT
 
-    Vite will load src/main.jsx.
-
-    main.jsx will load:
-      App.jsx
-      styles.css
-      all editor components
-  -->
+       Vite will load the React application from here.
+       ====================================================== -->
 
   <script
     type="module"
