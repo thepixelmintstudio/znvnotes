@@ -1,0 +1,1694 @@
+/* ============================================================
+   ZENOVA NOTE STUDIO
+   V1 GLOBAL STYLES
+   ============================================================ */
+
+
+/* ============================================================
+   1. FONT SYSTEM
+   ============================================================ */
+
+/*
+   IMPORTANT:
+
+   These are temporary fallbacks until we put the actual
+   licensed/local font files inside:
+
+   public/fonts/
+
+   Later we will replace these with @font-face declarations.
+*/
+
+:root {
+
+  --font-body: "Inter", Arial, sans-serif;
+  --font-heading: "Poppins", Arial, sans-serif;
+  --font-math: "STIX Two Math", "Times New Roman", serif;
+
+
+  /* ----------------------------------------------------------
+     ZENOVA BRAND COLOURS
+     ---------------------------------------------------------- */
+
+  --zenova-navy: #071B49;
+  --zenova-blue: #0C4C9A;
+  --zenova-light-blue: #1FA3E0;
+
+  --text-dark: #17233D;
+  --text-body: #34415A;
+  --text-muted: #71809A;
+
+  --page-background: #EEF1F6;
+  --panel-background: #FFFFFF;
+
+  --border-light: #DCE2EB;
+  --border-medium: #C9D2DF;
+
+
+  /* ----------------------------------------------------------
+     SPECIAL BOX COLOURS
+     ---------------------------------------------------------- */
+
+  --important-background: #FFF1F6;
+  --important-border: #ED8FAA;
+  --important-header: #C92557;
+
+  --formula-background: #FFF8DE;
+  --formula-border: #E6B84E;
+  --formula-header: #9A6700;
+
+  --concept-background: #EEF6FF;
+  --concept-border: #91BCEB;
+  --concept-header: #1265BD;
+
+  --example-background: #EEF9F1;
+  --example-border: #91CEA0;
+  --example-header: #25854A;
+
+  --exam-background: #FFF4E3;
+  --exam-border: #EDB65E;
+  --exam-header: #B96700;
+
+  --question-background: #FFF0F1;
+  --question-border: #E99BA5;
+  --question-header: #C32B3F;
+
+  --remember-background: #F4EEFF;
+  --remember-border: #BBA0E9;
+  --remember-header: #7043BB;
+}
+
+
+/* ============================================================
+   2. RESET
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+
+  font-family: var(--font-body);
+
+  background: var(--page-background);
+
+  color: var(--text-dark);
+
+  overflow: hidden;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+button,
+input,
+textarea,
+select {
+
+  font-family: inherit;
+}
+
+
+button {
+
+  cursor: pointer;
+
+}
+
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+
+  outline: 2px solid var(--zenova-light-blue);
+
+  outline-offset: 1px;
+
+}
+
+
+/* ============================================================
+   3. APPLICATION
+   ============================================================ */
+
+.zenova-app {
+
+  width: 100%;
+
+  height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+/* ============================================================
+   4. TOP APPLICATION BAR
+   ============================================================ */
+
+.zenova-topbar {
+
+  height: 70px;
+
+  min-height: 70px;
+
+  background: var(--zenova-navy);
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 20px;
+
+  gap: 25px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.12);
+
+  z-index: 20;
+
+}
+
+
+/* BRAND */
+
+.zenova-brand {
+
+  width: 205px;
+
+  flex-shrink: 0;
+
+}
+
+
+.zenova-logo {
+
+  font-family: var(--font-heading);
+
+  font-size: 24px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  line-height: 1;
+
+}
+
+
+.zenova-logo span {
+
+  color: var(--zenova-light-blue);
+
+}
+
+
+.zenova-logo-subtitle {
+
+  margin-top: 5px;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: #B9CBE7;
+
+}
+
+
+/* DOCUMENT TITLE */
+
+.zenova-document-title {
+
+  flex: 1;
+
+  min-width: 0;
+
+  border-left:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  padding-left: 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+}
+
+
+.zenova-document-title strong {
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+}
+
+
+.zenova-document-title span {
+
+  font-size: 10px;
+
+  color: #B8C8E1;
+
+}
+
+
+/* TOP ACTIONS */
+
+.zenova-top-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+}
+
+
+.zenova-top-actions button {
+
+  border:
+    1px solid rgba(255, 255, 255, 0.20);
+
+  background: transparent;
+
+  color: white;
+
+  border-radius: 6px;
+
+  padding: 8px 12px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+
+}
+
+
+.zenova-top-actions button:hover {
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(255, 255, 255, 0.35);
+
+}
+
+
+.zenova-top-actions
+.zenova-export-button {
+
+  background: var(--zenova-light-blue);
+
+  border-color: var(--zenova-light-blue);
+
+}
+
+
+.zenova-top-actions
+.zenova-export-button:hover {
+
+  background: #168FC8;
+
+}
+
+
+/* ============================================================
+   5. MAIN WORKSPACE
+   ============================================================ */
+
+.zenova-workspace {
+
+  flex: 1;
+
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    230px
+    minmax(550px, 1fr)
+    250px;
+
+}
+
+
+/* ============================================================
+   6. LEFT TOOL PANEL
+   ============================================================ */
+
+.zenova-left-panel {
+
+  background: var(--panel-background);
+
+  border-right:
+    1px solid var(--border-light);
+
+  padding: 18px 13px;
+
+  overflow-y: auto;
+
+}
+
+
+.zenova-panel-title {
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  color: var(--text-muted);
+
+  margin:
+    3px 5px 13px;
+
+}
+
+
+.zenova-section-title {
+
+  margin:
+    20px 5px 8px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+
+  color: #98A4B7;
+
+}
+
+
+/* TOOL BUTTON */
+
+.zenova-tool-button {
+
+  width: 100%;
+
+  min-height: 42px;
+
+  border:
+    1px solid #E0E6EE;
+
+  background: white;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    7px 9px;
+
+  margin-bottom: 7px;
+
+  color: #273550;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+
+}
+
+
+.zenova-tool-button:hover {
+
+  background: #F7FAFE;
+
+  border-color: #A8BDD9;
+
+}
+
+
+.zenova-tool-button:active {
+
+  transform: scale(0.985);
+
+}
+
+
+.tool-icon {
+
+  width: 27px;
+
+  height: 27px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 6px;
+
+  background: #EEF2F7;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+}
+
+
+/* SPECIAL TOOL COLOURS */
+
+.zenova-tool-button.pink
+.tool-icon {
+
+  background: #FFE5EE;
+
+  color: var(--important-header);
+
+}
+
+
+.zenova-tool-button.yellow
+.tool-icon {
+
+  background: #FFF1C4;
+
+  color: var(--formula-header);
+
+}
+
+
+.zenova-tool-button.blue
+.tool-icon {
+
+  background: #E3F0FF;
+
+  color: var(--concept-header);
+
+}
+
+
+.zenova-tool-button.green
+.tool-icon {
+
+  background: #E3F7E9;
+
+  color: var(--example-header);
+
+}
+
+
+.zenova-tool-button.orange
+.tool-icon {
+
+  background: #FFF0D8;
+
+  color: var(--exam-header);
+
+}
+
+
+.zenova-tool-button.red
+.tool-icon {
+
+  background: #FFE4E7;
+
+  color: var(--question-header);
+
+}
+
+
+.zenova-tool-button.purple
+.tool-icon {
+
+  background: #EFE7FF;
+
+  color: var(--remember-header);
+
+}
+
+
+/* ============================================================
+   7. CENTRE EDITOR
+   ============================================================ */
+
+.zenova-editor-area {
+
+  min-width: 0;
+
+  min-height: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+/* EDITOR TOOLBAR */
+
+.zenova-editor-toolbar {
+
+  height: 48px;
+
+  min-height: 48px;
+
+  background: white;
+
+  border-bottom:
+    1px solid var(--border-light);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding:
+    0 15px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+
+}
+
+
+/* ZOOM */
+
+.toolbar-group {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+}
+
+
+.toolbar-group button {
+
+  width: 27px;
+
+  height: 27px;
+
+  border:
+    1px solid var(--border-light);
+
+  background: white;
+
+  border-radius: 5px;
+
+  color: var(--text-dark);
+
+}
+
+
+.toolbar-group button:hover {
+
+  background: #F3F6FA;
+
+}
+
+
+/* PAGE LAYOUT */
+
+.toolbar-layout {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+}
+
+
+.toolbar-layout > span {
+
+  margin-right: 5px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: .8px;
+
+  color: #8A96A9;
+
+}
+
+
+.toolbar-layout button {
+
+  border:
+    1px solid var(--border-light);
+
+  background: white;
+
+  color: #617089;
+
+  border-radius: 5px;
+
+  padding:
+    6px 9px;
+
+  font-size: 10px;
+
+}
+
+
+.toolbar-layout button:hover {
+
+  background: #F4F7FB;
+
+}
+
+
+.toolbar-layout button.active {
+
+  background: #EAF5FD;
+
+  border-color: #8EC9EB;
+
+  color: #096AA2;
+
+  font-weight: 700;
+
+}
+
+
+/* PAGE NUMBER */
+
+.toolbar-page-number {
+
+  font-weight: 600;
+
+  color: #7D899D;
+
+}
+
+
+/* ============================================================
+   8. PAGE WORKSPACE
+   ============================================================ */
+
+.zenova-page-workspace {
+
+  flex: 1;
+
+  min-height: 0;
+
+  overflow: auto;
+
+  background: #EEF1F6;
+
+  padding: 38px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+}
+
+
+/* ============================================================
+   9. A4 PAGE
+   ============================================================ */
+
+.zenova-a4-page {
+
+  position: relative;
+
+  width: 794px;
+
+  min-width: 794px;
+
+  min-height: 1123px;
+
+  background: white;
+
+  box-shadow:
+    0 10px 38px rgba(24, 43, 72, 0.14);
+
+  overflow: hidden;
+
+}
+
+
+/* ============================================================
+   10. PAGE HEADER
+   ============================================================ */
+
+.zenova-page-header {
+
+  height: 78px;
+
+  background:
+    linear-gradient(
+      110deg,
+      #071B49,
+      #0B367E
+    );
+
+  color: white;
+
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    1fr
+    1.7fr;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding:
+    0 26px;
+
+}
+
+
+/* INSTITUTION */
+
+.zenova-page-institution {
+
+  font-family: var(--font-heading);
+
+  font-size: 18px;
+
+  font-weight: 800;
+
+  letter-spacing: .5px;
+
+}
+
+
+/* SUBJECT */
+
+.zenova-page-subject {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  padding-left: 18px;
+
+  border-left:
+    1px solid rgba(255,255,255,.22);
+
+}
+
+
+.zenova-page-subject strong {
+
+  font-size: 10px;
+
+  letter-spacing: .4px;
+
+}
+
+
+.zenova-page-subject span {
+
+  font-size: 8px;
+
+  color: #C1D2EB;
+
+}
+
+
+/* CHAPTER */
+
+.zenova-page-chapter {
+
+  padding-left: 18px;
+
+  border-left:
+    1px solid rgba(255,255,255,.22);
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+
+.zenova-page-chapter strong {
+
+  font-size: 10px;
+
+  line-height: 1.35;
+
+}
+
+
+/* ============================================================
+   11. PAGE BODY
+   ============================================================ */
+
+.zenova-page-body {
+
+  min-height: 965px;
+
+  padding:
+    30px 36px 70px;
+
+}
+
+
+/* TWO COLUMN MODE */
+
+.zenova-page-body.two-columns {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 24px;
+
+}
+
+
+/* VERTICAL DIVIDER */
+
+.zenova-page-body.two-columns
+.second-column {
+
+  border-left:
+    1px solid #D7DEE8;
+
+  padding-left: 24px;
+
+}
+
+
+/* ============================================================
+   12. NOTE COLUMN
+   ============================================================ */
+
+.zenova-note-column {
+
+  min-width: 0;
+
+}
+
+
+/* ============================================================
+   13. SUBTOPIC
+   ============================================================ */
+
+.zenova-subtopic {
+
+  margin-bottom: 22px;
+
+}
+
+
+.zenova-subtopic span {
+
+  display: inline-block;
+
+  color: #1265BD;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+}
+
+
+.zenova-subtopic h1 {
+
+  font-family: var(--font-heading);
+
+  margin:
+    5px 0 7px;
+
+  color: var(--zenova-navy);
+
+  font-size: 30px;
+
+  line-height: 1.15;
+
+  letter-spacing: -.4px;
+
+}
+
+
+.zenova-subtopic p {
+
+  margin: 0;
+
+  color: #66748A;
+
+  font-size: 11px;
+
+}
+
+
+/* ============================================================
+   14. EDITABLE TEXT
+   ============================================================ */
+
+.zenova-editable-text {
+
+  min-height: 80px;
+
+  color: var(--text-body);
+
+  font-size: 12px;
+
+  line-height: 1.75;
+
+  outline: none;
+
+  white-space: pre-wrap;
+
+}
+
+
+.zenova-editable-text:focus {
+
+  outline:
+    1px dashed #72B6E1;
+
+  outline-offset: 5px;
+
+}
+
+
+.zenova-editable-text:empty::before {
+
+  content:
+    "Start typing your notes here...";
+
+  color: #A3ADBC;
+
+}
+
+
+/* ============================================================
+   15. RIGHT PROPERTIES PANEL
+   ============================================================ */
+
+.zenova-right-panel {
+
+  background: white;
+
+  border-left:
+    1px solid var(--border-light);
+
+  padding:
+    18px 14px;
+
+  overflow-y: auto;
+
+}
+
+
+.zenova-field {
+
+  display: block;
+
+  margin-bottom: 13px;
+
+}
+
+
+.zenova-field span {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6E7C93;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+}
+
+
+.zenova-field input {
+
+  width: 100%;
+
+  height: 34px;
+
+  border:
+    1px solid #D7DFE9;
+
+  background: white;
+
+  border-radius: 6px;
+
+  padding:
+    0 9px;
+
+  color: #263550;
+
+  font-size: 10px;
+
+  transition: border-color .15s ease;
+
+}
+
+
+.zenova-field input:focus {
+
+  border-color:
+    #65B4E1;
+
+  outline: none;
+
+}
+
+
+.zenova-panel-divider {
+
+  height: 1px;
+
+  background: #E5E9EF;
+
+  margin:
+    20px 0;
+
+}
+
+
+.zenova-page-option {
+
+  background: #F7F9FC;
+
+  border:
+    1px solid #E1E6EE;
+
+  border-radius: 7px;
+
+  padding: 11px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+}
+
+
+.zenova-page-option span {
+
+  font-size: 9px;
+
+  color: #7C889D;
+
+}
+
+
+.zenova-page-option strong {
+
+  font-size: 11px;
+
+  color: #263550;
+
+}
+
+
+.zenova-info-box {
+
+  margin-top: 16px;
+
+  padding: 12px;
+
+  background: #EEF6FF;
+
+  border:
+    1px solid #C5DDF5;
+
+  border-radius: 7px;
+
+}
+
+
+.zenova-info-box strong {
+
+  display: block;
+
+  font-size: 10px;
+
+  color: #1265BD;
+
+}
+
+
+.zenova-info-box p {
+
+  margin:
+    6px 0 0;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  color: #60718B;
+
+}
+
+
+/* ============================================================
+   16. PAGE FOOTER
+   ============================================================ */
+
+.zenova-page-footer {
+
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  height: 42px;
+
+  background: var(--zenova-navy);
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding:
+    0 23px;
+
+  font-size: 7.5px;
+
+  letter-spacing: .6px;
+
+}
+
+
+.zenova-page-footer
+span:nth-child(2) {
+
+  color: #28A9E5;
+
+  font-weight: 700;
+
+}
+
+
+/* ============================================================
+   17. ADD BOX MODAL
+   ============================================================ */
+
+.zenova-modal-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  background:
+    rgba(7, 20, 48, 0.48);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+}
+
+
+.zenova-box-modal {
+
+  width: 500px;
+
+  max-width: 100%;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 20px 60px rgba(5, 17, 40, .28);
+
+}
+
+
+/* MODAL HEADER */
+
+.zenova-modal-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  padding:
+    20px 21px 16px;
+
+  border-bottom:
+    1px solid #E5E9EF;
+
+}
+
+
+.zenova-modal-header span {
+
+  display: block;
+
+  color: #7A879B;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+
+}
+
+
+.zenova-modal-header h2 {
+
+  margin:
+    5px 0 0;
+
+  font-family: var(--font-heading);
+
+  font-size: 19px;
+
+  color: var(--zenova-navy);
+
+}
+
+
+.zenova-modal-header button {
+
+  width: 30px;
+
+  height: 30px;
+
+  border: 0;
+
+  background: #F1F4F8;
+
+  border-radius: 6px;
+
+  font-size: 19px;
+
+  line-height: 1;
+
+  color: #53627A;
+
+}
+
+
+.zenova-modal-header button:hover {
+
+  background: #E7ECF3;
+
+}
+
+
+/* MODAL FIELDS */
+
+.zenova-modal-field {
+
+  display: block;
+
+  padding:
+    0 21px;
+
+  margin-top: 17px;
+
+}
+
+
+.zenova-modal-field span {
+
+  display: block;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #5E6D85;
+
+  margin-bottom: 6px;
+
+}
+
+
+.zenova-modal-field input,
+.zenova-modal-field textarea,
+.zenova-modal-field select {
+
+  width: 100%;
+
+  border:
+    1px solid #D5DDE8;
+
+  border-radius: 7px;
+
+  background: white;
+
+  color: #23314B;
+
+  font-size: 11px;
+
+  padding:
+    9px 10px;
+
+}
+
+
+.zenova-modal-field textarea {
+
+  resize: vertical;
+
+  min-height: 130px;
+
+  line-height: 1.55;
+
+}
+
+
+.zenova-modal-field select {
+
+  height: 38px;
+
+}
+
+
+.zenova-modal-field input:focus,
+.zenova-modal-field textarea:focus,
+.zenova-modal-field select:focus {
+
+  outline: none;
+
+  border-color: #58AFDF;
+
+  box-shadow:
+    0 0 0 3px rgba(31,163,224,.10);
+
+}
+
+
+/* MODAL ACTIONS */
+
+.zenova-modal-actions {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  padding:
+    20px 21px;
+
+  margin-top: 4px;
+
+}
+
+
+.zenova-modal-actions button {
+
+  border:
+    1px solid #D5DDE8;
+
+  background: white;
+
+  color: #52617A;
+
+  padding:
+    9px 14px;
+
+  border-radius: 6px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+}
+
+
+.zenova-modal-actions button:hover {
+
+  background: #F5F7FA;
+
+}
+
+
+.zenova-modal-actions
+.zenova-add-button {
+
+  background: var(--zenova-blue);
+
+  border-color: var(--zenova-blue);
+
+  color: white;
+
+}
+
+
+.zenova-modal-actions
+.zenova-add-button:hover {
+
+  background: #0A4183;
+
+}
+
+
+/* ============================================================
+   18. SCROLLBARS
+   ============================================================ */
+
+.zenova-left-panel::-webkit-scrollbar,
+.zenova-right-panel::-webkit-scrollbar,
+.zenova-page-workspace::-webkit-scrollbar,
+.zenova-box-modal::-webkit-scrollbar {
+
+  width: 7px;
+
+}
+
+
+.zenova-left-panel::-webkit-scrollbar-thumb,
+.zenova-right-panel::-webkit-scrollbar-thumb,
+.zenova-page-workspace::-webkit-scrollbar-thumb,
+.zenova-box-modal::-webkit-scrollbar-thumb {
+
+  background: #C7D0DD;
+
+  border-radius: 10px;
+
+}
+
+
+.zenova-left-panel::-webkit-scrollbar-track,
+.zenova-right-panel::-webkit-scrollbar-track,
+.zenova-page-workspace::-webkit-scrollbar-track,
+.zenova-box-modal::-webkit-scrollbar-track {
+
+  background: transparent;
+
+}
+
+
+/* ============================================================
+   19. RESPONSIVE SAFETY
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+  .zenova-workspace {
+
+    grid-template-columns:
+      200px
+      minmax(450px, 1fr)
+      220px;
+
+  }
+
+  .zenova-topbar {
+
+    gap: 14px;
+
+  }
+
+  .zenova-brand {
+
+    width: 175px;
+
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .zenova-right-panel {
+
+    display: none;
+
+  }
+
+  .zenova-workspace {
+
+    grid-template-columns:
+      200px
+      minmax(500px, 1fr);
+
+  }
+
+}
+
+
+/* ============================================================
+   20. PRINT / PDF FOUNDATION
+   ============================================================ */
+
+@media print {
+
+  body {
+
+    background: white;
+
+    overflow: visible;
+
+  }
+
+
+  .zenova-topbar,
+  .zenova-left-panel,
+  .zenova-right-panel,
+  .zenova-editor-toolbar {
+
+    display: none !important;
+
+  }
+
+
+  .zenova-workspace {
+
+    display: block;
+
+    height: auto;
+
+  }
+
+
+  .zenova-editor-area {
+
+    display: block;
+
+  }
+
+
+  .zenova-page-workspace {
+
+    display: block;
+
+    padding: 0;
+
+    overflow: visible;
+
+    background: white;
+
+  }
+
+
+  .zenova-a4-page {
+
+    width: 210mm;
+
+    min-width: 210mm;
+
+    min-height: 297mm;
+
+    box-shadow: none;
+
+    margin: 0;
+
+    page-break-after: always;
+
+  }
+
+
+  @page {
+
+    size: A4 portrait;
+
+    margin: 0;
+
+  }
+
+}
