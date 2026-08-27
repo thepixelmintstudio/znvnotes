@@ -1,0 +1,431 @@
+/* ============================================================
+   ZENOVA NOTE STUDIO
+   GLOBAL SOFTWARE STYLES
+   VERSION 1
+   ============================================================ */
+
+
+/* ============================================================
+   1. ZENOVA DESIGN VARIABLES
+   ============================================================ */
+
+:root {
+
+  /* ----------------------------------------------------------
+     BRAND
+     ---------------------------------------------------------- */
+
+  --zenova-navy: #071B49;
+  --zenova-blue: #0C4C9A;
+  --zenova-cyan: #1FA3E0;
+
+
+  /* ----------------------------------------------------------
+     APPLICATION
+     ---------------------------------------------------------- */
+
+  --software-background: #EEF1F6;
+  --panel-background: #FFFFFF;
+
+  --border-light: #DCE2EB;
+  --border-medium: #C8D2DF;
+
+
+  /* ----------------------------------------------------------
+     TEXT
+     ---------------------------------------------------------- */
+
+  --text-primary: #17233D;
+  --text-secondary: #53627A;
+  --text-muted: #7C899D;
+
+
+  /* ----------------------------------------------------------
+     FONT FALLBACKS
+
+     Actual Zenova font files will be added later.
+     ---------------------------------------------------------- */
+
+  --font-body: "Inter", Arial, sans-serif;
+  --font-heading: "Poppins", Arial, sans-serif;
+  --font-math: "STIX Two Math", "Times New Roman", serif;
+
+}
+
+
+/* ============================================================
+   2. BASIC RESET
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body,
+#root {
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+}
+
+
+body {
+
+  font-family: var(--font-body);
+
+  background: var(--software-background);
+
+  color: var(--text-primary);
+
+  overflow: hidden;
+
+  -webkit-font-smoothing: antialiased;
+
+}
+
+
+/* ============================================================
+   3. FORM ELEMENTS
+   ============================================================ */
+
+button,
+input,
+textarea,
+select {
+
+  font-family: inherit;
+
+}
+
+
+button {
+
+  cursor: pointer;
+
+}
+
+
+/* ============================================================
+   4. ZENOVA APPLICATION ROOT
+   ============================================================ */
+
+.zenova-app {
+
+  width: 100%;
+
+  height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--software-background);
+
+}
+
+
+/* ============================================================
+   5. INITIAL LOADING SCREEN
+   ============================================================ */
+
+.zenova-loading {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+/* ============================================================
+   6. ZENOVA LOGO
+   ============================================================ */
+
+.zenova-loading-logo {
+
+  font-family: var(--font-heading);
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  letter-spacing: 4px;
+
+  color: var(--zenova-navy);
+
+}
+
+
+.zenova-loading-logo span {
+
+  color: var(--zenova-cyan);
+
+}
+
+
+/* ============================================================
+   7. LOGO SUBTITLE
+   ============================================================ */
+
+.zenova-loading-text {
+
+  margin-top: 8px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  color: var(--text-muted);
+
+}
+
+
+/* ============================================================
+   8. FUTURE APPLICATION SHELL
+
+   The main software workspace will replace the loading
+   screen.
+
+   We are reserving these classes now so the architecture
+   remains consistent.
+   ============================================================ */
+
+.zenova-workspace {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.zenova-topbar {
+
+  height: 64px;
+
+  flex-shrink: 0;
+
+  background: var(--zenova-navy);
+
+}
+
+
+.zenova-main-area {
+
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+
+}
+
+
+.zenova-left-panel {
+
+  width: 230px;
+
+  flex-shrink: 0;
+
+  background: var(--panel-background);
+
+  border-right:
+    1px solid var(--border-light);
+
+}
+
+
+.zenova-editor-area {
+
+  flex: 1;
+
+  min-width: 0;
+
+  min-height: 0;
+
+  background: var(--software-background);
+
+}
+
+
+.zenova-right-panel {
+
+  width: 250px;
+
+  flex-shrink: 0;
+
+  background: var(--panel-background);
+
+  border-left:
+    1px solid var(--border-light);
+
+}
+
+
+/* ============================================================
+   9. A4 PAGE FOUNDATION
+
+   A4 physical ratio:
+
+   210mm × 297mm
+
+   We will use the actual physical dimensions for print
+   and a scaled representation inside the browser editor.
+   ============================================================ */
+
+.zenova-a4-page {
+
+  position: relative;
+
+  width: 210mm;
+
+  min-height: 297mm;
+
+  background: white;
+
+}
+
+
+/* ============================================================
+   10. EDITOR PAGE AREA
+   ============================================================ */
+
+.zenova-page-area {
+
+  flex: 1;
+
+  overflow: auto;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  padding: 40px;
+
+  background: var(--software-background);
+
+}
+
+
+/* ============================================================
+   11. SELECTION FOUNDATION
+
+   Later used by the editor engine when a text block or
+   note box is selected.
+   ============================================================ */
+
+.zenova-selection {
+
+  position: absolute;
+
+  border:
+    1px solid var(--zenova-cyan);
+
+  pointer-events: none;
+
+}
+
+
+/* ============================================================
+   12. ACCESSIBILITY
+
+   Keyboard users should always be able to see what has
+   focus.
+   ============================================================ */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+
+  outline:
+    2px solid var(--zenova-cyan);
+
+  outline-offset: 2px;
+
+}
+
+
+/* ============================================================
+   13. SCROLLBAR
+   ============================================================ */
+
+*::-webkit-scrollbar {
+
+  width: 8px;
+  height: 8px;
+
+}
+
+
+*::-webkit-scrollbar-thumb {
+
+  background: #C7D0DD;
+
+  border-radius: 10px;
+
+}
+
+
+*::-webkit-scrollbar-track {
+
+  background: transparent;
+
+}
+
+
+/* ============================================================
+   14. PRINT FOUNDATION
+   ============================================================ */
+
+@media print {
+
+  body {
+
+    background: white;
+
+    overflow: visible;
+
+  }
+
+
+  .zenova-a4-page {
+
+    width: 210mm;
+
+    min-height: 297mm;
+
+    box-shadow: none;
+
+  }
+
+
+  @page {
+
+    size: A4 portrait;
+
+    margin: 0;
+
+  }
+
+}
